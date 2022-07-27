@@ -1,0 +1,358 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+html {
+    font-size: 10px;
+    font-family: 'Fondamento', 'verdana', cursive;
+    scroll-behavior: smooth;
+  
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background-color: black;
+
+}
+
+.logo h3{
+    max-width: 100px;
+    color:#fffacd
+  
+}
+
+/*Nav section*/
+
+.nav {
+    position: fixed;
+    background: black;
+    color: rgb(126,2,2);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    transform: translateX(100%);
+    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: inherit;
+    font-size: xx-large;
+    font-weight: bold;
+    text-decoration: none;
+   
+}
+
+.nav-link:hover {
+    color: #fffacd;
+}
+
+.nav-toggle {
+    padding: .5em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 1000;
+}
+
+.nav-open .nav {
+    transform: translateX(0);
+}
+
+.nav-open .nav-toggle {
+    position: fixed;
+}
+
+.nav-open .hamburger {
+    transform: rotate(.625turn);
+}
+
+.nav-open .hamburger::before {
+    transform: rotate(90deg) translateX(-6px);
+}
+
+.nav-open .hamburger::after {
+    opacity: 0;
+}
+
+.hamburger {
+    display: block;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    background:rgb(126,2,2);
+    width: 2em;
+    height: 3px;
+    border-radius: 1em;
+    transition: transform 250ms ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.hamburger::before {top: 6px;}
+.hamburger::after {bottom: 6px;}
+
+
+/*Presentation section*/
+
+#presentation {
+    background-image: url(./bg.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+#presentation h1 {
+    display: block;
+    width: fit-content;
+    font-size: 5rem;
+    position: relative;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1.5s;
+}
+
+#presentation h1:nth-child(1) {
+    animation-delay: .8s;
+}
+
+#presentation h1:nth-child(2) {
+    animation-delay: 1.8s;
+}
+
+
+
+#presentation h2 {
+    display: inline-block;
+    width: fit-content;
+    font-size: 3rem;
+    position: relative;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1.5s;
+    animation: text_reveal_FL .5 ease forwards;
+}
+
+#presentation h2 {
+    animation-delay: 3s;
+}
+
+
+#presentation .cta {
+    display: block;
+    padding: 5px;
+    text-align: center;
+    color: rgb(126,2,2) ;;
+    background-color:transparent;
+    border: 2px solid rgb(126,2,2);
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 20px;
+    transition: .5s ease;
+    transition-property: background-color, color;
+}
+
+#presentation .cta:hover {
+    color: #fffacd;
+    background-color: rgb(126,2,2);
+}
+
+#presentation h1 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    animation: text_reveal_box 1s ease;
+    animation-delay: .5s;
+    background-color: rgb(126,2,2);
+ 
+}
+
+#presentation h2 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    animation: text_reveal_box 1s ease;
+    animation-delay: .5s;
+    background-color: #fffacd
+    
+}
+
+#presentation h1:nth-child(1) span {
+    animation-delay: .5s;
+}
+
+#presentation h1:nth-child(2) span {
+    animation-delay: 1.5s;
+}
+
+#presentation h2 span {
+    animation-delay: 2.5s;
+}
+#presentation::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+/*Project section*/
+
+#project .project {
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0;
+
+}
+
+#project .project-header h1 {
+    margin-bottom: 50px;
+}
+
+#project .all-projects {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#project .project-item {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+    max-width: 800px;
+
+}
+
+#project .project-info {
+    padding: 30px;
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px 10px 0 0;
+    background-image: linear-gradient(60deg, rgb(200,2,2) 0%, rgb(126,2,2) 100%);
+    color: #fffacd;
+}
+
+#project .project-info h1 {
+    font-size: 4rem;
+  
+}
+
+#project .project-info h2 {
+    font-size: 1.8rem;
+    margin-top: 10px;
+}
+
+#project .project-img {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+ 
+}
+
+#project .project-img::after {
+
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    opacity: 0.7;
+}
+#project .project-img img {
+    transition: 0.5s ease transform;
+
+}
+
+#project .project-item:hover .project-img img{
+    transform: scale(1.1);
+}
+
+/* KeyFrames */
+
+@keyframes text_reveal_FL {
+    100% {
+        color: #fffacd
+    }
+}
+
+@keyframes text_reveal {
+    100% {
+        color: rgb(126,2,2);
+    }
+}
+
+@keyframes text_reveal_box {
+    50% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
