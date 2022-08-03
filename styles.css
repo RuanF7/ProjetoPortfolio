@@ -332,6 +332,49 @@ header {
     transform: scale(1.1);
 }
 
+.footer {
+
+    background: black;
+    color:rgb(126,2,2);
+    text-align: center;
+    padding: 2.5em 0;
+}
+
+.footer a { 
+    color: rgb(126,2,2);
+    text-decoration: none;
+    font-size: large;
+    font-family: inherit;
+    transition: .5s ease;
+}
+
+.footer-link:hover, 
+.social-list-link:hover {
+    color: #fffacd;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.social-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0;
+    padding: 0;
+
+}
+
+.social-list-item {
+    margin: 0;
+}
+
+.social-list-link {
+    padding: .5em;
+}
+
+
 /* KeyFrames */
 
 @keyframes text_reveal_FL {
