@@ -10,3 +10,16 @@ navLinks.forEach(link => {
         document.body.classList.remove('nav-open');
     })
 })
+
+ const countElement = 
+document.getElementById('count');
+
+update();
+
+function update() {
+    fetch('https://api.countapi.xyz/create?namespace=ruanf7.github.io&value=1').then((res) => 
+    res.json()).then((res) => {
+        countElement.innerHTML = 
+    res.value;
+    });
+}
