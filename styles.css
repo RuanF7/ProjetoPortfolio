@@ -428,6 +428,21 @@ header {
     transform: scale(1.1);
 }
 
+.api-count {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(126,2,2);
+    color: #fffacd;
+    font-size: 25px;
+    
+}
+
+.count {
+font-size: 70px;
+
+}
+
 .footer {
 
     background: black;
