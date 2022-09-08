@@ -11,15 +11,16 @@ navLinks.forEach(link => {
     })
 })
 
- const countElement = 
-document.getElementById('count');
+ 
+function updateCounter() {
+   
+    fetch('https://api.countapi.xyz/update/ruanf7.github.io/github/?amount=1')
+        .then(res =>  res.json())
+        .then(data => counterElement.innerHTML = data.value)
+        }
 
-update();
+updateCounter()
 
-function update() {
-    fetch('https://api.countapi.xyz/create?namespace=ruanf7.github.io&value=1').then((res) => 
-    res.json()).then((res) => {
-        countElement.innerHTML = 
-    res.value;
-    });
-}
+counterElement = document.getElementsByClassName('count')[0]
+
+
