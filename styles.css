@@ -305,6 +305,7 @@ header {
     list-style: none;
     display: flex;
     justify-content: space-evenly;
+    position: relative;
     margin-top: -2em ;
     padding: 0;
     height: 50px;
@@ -314,7 +315,9 @@ header {
 }
 
 .about-me-body {
-    margin-top: -1em;
+    margin-top: 1em;
+    position: relative;
+    
 
 }
 
