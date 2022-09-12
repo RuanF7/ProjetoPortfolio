@@ -186,8 +186,8 @@ header {
     display: block;
     padding: 5px;
     text-align: center;
-    color: rgb(126,2,2) ;;
-    background-color:transparent;
+    color: #fffacd ;
+    background: transparent;
     border: 2px solid rgb(126,2,2);
     font-size: 2rem;
     text-transform: uppercase;
@@ -200,6 +200,7 @@ header {
 #presentation .cta:hover {
     color: #fffacd;
     background-color: rgb(126,2,2);
+    border: 2px solid #fffacd;
 }
 
 #presentation h1 span {
