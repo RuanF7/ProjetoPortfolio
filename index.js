@@ -11,15 +11,13 @@ navLinks.forEach(link => {
   })
 })
 
-const counterElement = document.querySelector('.count')
-
 async function updateCounter() {
   try {
-    const response = await fetch('https://api.github.com/repos/RuanF7/RuanF7.github.io')
-    const repoData = await response.json()
-    document.querySelector('.count').textContent = repoData.stargazers_count || 0
+    const response = await fetch('https://api.countapi.xyz/hit/ruanf7.github.io/visits')
+    const data = await response.json()
+    document.querySelector('.count').textContent = data.value || 0
   } catch (error) {
-    console.log("Using simple counter")
+    console.log("Erro no contador externo, usando localStorage")
     let count = localStorage.getItem('pageViews') || 0
     count = parseInt(count) + 1
     localStorage.setItem('pageViews', count)
